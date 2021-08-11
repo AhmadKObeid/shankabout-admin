@@ -53,7 +53,7 @@
     "build": "react-scripts build",
     "test": "cross-env REACT_APP_ENVIRONMENT=testenv react-scripts test",
     "eject": "react-scripts eject",
-    "start": "serve -s build",
+    "start": "npm run start:localhost",
     "start:localhost": "cross-env REACT_APP_ENVIRONMENT=localhost react-scripts start",
     "build:staging": "cross-env REACT_APP_ENVIRONMENT=staging npm run build",
     "start:staging": "cross-env REACT_APP_ENVIRONMENT=staging react-scripts start",
