@@ -37,6 +37,12 @@ const schema = yup.object().shape({
       "required": true
     },
   ),
+  socialType: yupFormSchemas.string(
+    i18n('entities.customer.fields.socialType'),
+    {
+      "required": true
+    },
+  ),
   socialId: yupFormSchemas.string(
     i18n('entities.customer.fields.socialId'),
     {},
