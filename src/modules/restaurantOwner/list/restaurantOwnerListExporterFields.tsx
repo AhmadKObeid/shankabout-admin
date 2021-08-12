@@ -20,10 +20,6 @@ export default [
     label: i18n('entities.restaurantOwner.fields.password'),
   },
   {
-    name: 'map',
-    label: i18n('entities.restaurantOwner.fields.map'),
-  },
-  {
     name: 'createdAt',
     label: i18n('entities.restaurantOwner.fields.createdAt'),
     render: exporterRenders.datetime(),

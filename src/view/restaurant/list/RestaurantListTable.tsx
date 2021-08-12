@@ -24,6 +24,7 @@ import Pagination from 'src/view/shared/table/Pagination';
 import Spinner from 'src/view/shared/Spinner';
 import TableCellCustom from 'src/view/shared/table/TableCellCustom';
 import ResturentCategoryListItem from 'src/view/resturentCategory/list/ResturentCategoryListItem';
+import CityListItem from 'src/view/city/list/CityListItem';
 
 function RestaurantListTable(props) {
   const [
@@ -146,10 +147,6 @@ function RestaurantListTable(props) {
                 )}
               />
               <TableCellCustom
-                onSort={doChangeSort}
-                hasRows={hasRows}
-                sorter={sorter}
-                name={'city'}
                 label={i18n(
                   'entities.restaurant.fields.city',
                 )}
@@ -265,7 +262,9 @@ function RestaurantListTable(props) {
                 <TableCell>
                   <ResturentCategoryListItem value={row.category} />
                 </TableCell>
-                <TableCell>{row.city}</TableCell>
+                <TableCell>
+                  <CityListItem value={row.city} />
+                </TableCell>
                 <TableCell>{row.address}</TableCell>
                 <TableCell>{row.description}</TableCell>
                 <TableCell>{row.googleMap}</TableCell>

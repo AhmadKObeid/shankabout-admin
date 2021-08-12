@@ -61,6 +61,7 @@ const es = {
           'fullName': 'FullName',
           'phoneNumber': 'PhoneNumber',
           'email': 'Email',
+          'socialType': 'SocialType',
           'socialId': 'socialId',
           'profileImage': 'ProfileImage',
           'city': 'City',
@@ -192,7 +193,6 @@ const es = {
           'resturentId': 'ResturentId',
           'username': 'Username',
           'password': 'Password',
-          'map': 'Map',
           createdAt: 'Creado el',
           updatedAt: 'Actualizado el',
           createdAtRange: 'Creado el',
@@ -932,6 +932,60 @@ const es = {
         importer: {
           title: 'Importar CallDrivers',
           fileName: 'callDriver_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
+
+    city: {
+        name: 'city',
+        label: 'Cities',
+        menu: 'Cities',
+        exporterFileName: 'exportacion_city',
+        list: {
+          menu: 'Cities',
+          title: 'Cities',
+        },
+        create: {
+          success: 'City guardado con éxito',
+        },
+        update: {
+          success: 'City guardado con éxito',
+        },
+        destroy: {
+          success: 'City eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'City(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar City',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo City',
+        },
+        view: {
+          title: 'Ver City',
+        },
+        importer: {
+          title: 'Importar Cities',
+          fileName: 'city_import_template',
           hint:
             'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
         },

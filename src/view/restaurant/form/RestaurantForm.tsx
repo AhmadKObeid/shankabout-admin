@@ -16,6 +16,7 @@ import TextAreaFormItem from 'src/view/shared/form/items/TextAreaFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import restaurantEnumerators from 'src/modules/restaurant/restaurantEnumerators';
 import ResturentCategoryAutocompleteFormItem from 'src/view/resturentCategory/autocomplete/ResturentCategoryAutocompleteFormItem';
+import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFormSchemas.string(
@@ -32,11 +33,9 @@ const schema = yup.object().shape({
     i18n('entities.restaurant.fields.category'),
     {},
   ),
-  city: yupFormSchemas.string(
+  city: yupFormSchemas.relationToOne(
     i18n('entities.restaurant.fields.city'),
-    {
-      "required": true
-    },
+    {},
   ),
   address: yupFormSchemas.string(
     i18n('entities.restaurant.fields.address'),
@@ -142,10 +141,11 @@ function RestaurantForm(props) {
               />
             </Grid>
             <Grid item lg={7} md={8} sm={12} xs={12}>
-              <InputFormItem
+              <CityAutocompleteFormItem  
                 name="city"
-                label={i18n('entities.restaurant.fields.city')}  
-                required={true}
+                label={i18n('entities.restaurant.fields.city')}
+                required={false}
+                showCreate={!props.modal}
               />
             </Grid>
             <Grid item lg={7} md={8} sm={12} xs={12}>

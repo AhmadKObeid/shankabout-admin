@@ -23,6 +23,7 @@ export default [
   {
     name: 'city',
     label: i18n('entities.restaurant.fields.city'),
+    render: exporterRenders.relationToOne(),
   },
   {
     name: 'address',

@@ -27,6 +27,7 @@ import InputRangeFormItem from 'src/view/shared/form/items/InputRangeFormItem';
 import SelectFormItem from 'src/view/shared/form/items/SelectFormItem';
 import restaurantEnumerators from 'src/modules/restaurant/restaurantEnumerators';
 import ResturentCategoryAutocompleteFormItem from 'src/view/resturentCategory/autocomplete/ResturentCategoryAutocompleteFormItem';
+import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
 
 const schema = yup.object().shape({
   name: yupFilterSchemas.string(
@@ -38,7 +39,7 @@ const schema = yup.object().shape({
   category: yupFilterSchemas.relationToOne(
     i18n('entities.restaurant.fields.category'),
   ),
-  city: yupFilterSchemas.string(
+  city: yupFilterSchemas.relationToOne(
     i18n('entities.restaurant.fields.city'),
   ),
   address: yupFilterSchemas.string(
@@ -88,9 +89,9 @@ const previewRenders = {
       render: filterRenders.relationToOne(),
     },
   city: {
-    label: i18n('entities.restaurant.fields.city'),
-    render: filterRenders.generic(),
-  },
+      label: i18n('entities.restaurant.fields.city'),
+      render: filterRenders.relationToOne(),
+    },
   address: {
     label: i18n('entities.restaurant.fields.address'),
     render: filterRenders.generic(),
@@ -207,9 +208,9 @@ function RestaurantListFilter(props) {
                   />
                 </Grid>
                 <Grid item lg={6} xs={12}>
-                  <InputFormItem
+                  <CityAutocompleteFormItem  
                     name="city"
-                    label={i18n('entities.restaurant.fields.city')}      
+                    label={i18n('entities.restaurant.fields.city')}        
                   />
                 </Grid>
                 <Grid item lg={6} xs={12}>

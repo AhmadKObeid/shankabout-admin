@@ -35,16 +35,12 @@ const schema = yup.object().shape({
   password: yupFilterSchemas.string(
     i18n('entities.restaurantOwner.fields.password'),
   ),
-  map: yupFilterSchemas.string(
-    i18n('entities.restaurantOwner.fields.map'),
-  ),
 });
 
 const emptyValues = {
   resturentId: null,
   username: null,
   password: null,
-  map: null,
 }
 
 const previewRenders = {
@@ -58,10 +54,6 @@ const previewRenders = {
   },
   password: {
     label: i18n('entities.restaurantOwner.fields.password'),
-    render: filterRenders.generic(),
-  },
-  map: {
-    label: i18n('entities.restaurantOwner.fields.map'),
     render: filterRenders.generic(),
   },
 }
@@ -144,12 +136,6 @@ function RestaurantOwnerListFilter(props) {
                   <InputFormItem
                     name="password"
                     label={i18n('entities.restaurantOwner.fields.password')}      
-                  />
-                </Grid>
-                <Grid item lg={6} xs={12}>
-                  <InputFormItem
-                    name="map"
-                    label={i18n('entities.restaurantOwner.fields.map')}      
                   />
                 </Grid>
               </Grid>

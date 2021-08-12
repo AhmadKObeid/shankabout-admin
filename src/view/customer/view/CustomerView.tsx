@@ -2,6 +2,7 @@ import React from 'react';
 import Spinner from 'src/view/shared/Spinner';
 import { i18n } from 'src/i18n';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
+import CityViewItem from 'src/view/city/view/CityViewItem';
 
 function CustomerView(props) {
   const renderView = () => {
@@ -25,6 +26,11 @@ function CustomerView(props) {
         />
 
         <TextViewItem
+          label={i18n('entities.customer.fields.socialType')}
+          value={record.socialType}
+        />
+
+        <TextViewItem
           label={i18n('entities.customer.fields.socialId')}
           value={record.socialId}
         />
@@ -34,7 +40,7 @@ function CustomerView(props) {
           value={record.profileImage}
         />
 
-        <TextViewItem
+        <CityViewItem
           label={i18n('entities.customer.fields.city')}
           value={record.city}
         />

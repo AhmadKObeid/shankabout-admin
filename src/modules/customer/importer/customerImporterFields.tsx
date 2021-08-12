@@ -17,9 +17,7 @@ export default [
     label: i18n('entities.customer.fields.phoneNumber'),
     schema: schemas.string(
       i18n('entities.customer.fields.phoneNumber'),
-      {
-        "required": true
-      },
+      {},
     ),
   },
   {
@@ -27,6 +25,16 @@ export default [
     label: i18n('entities.customer.fields.email'),
     schema: schemas.string(
       i18n('entities.customer.fields.email'),
+      {
+        "required": true
+      },
+    ),
+  },
+  {
+    name: 'socialType',
+    label: i18n('entities.customer.fields.socialType'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.socialType'),
       {
         "required": true
       },
@@ -51,7 +59,7 @@ export default [
   {
     name: 'city',
     label: i18n('entities.customer.fields.city'),
-    schema: schemas.string(
+    schema: schemas.relationToOne(
       i18n('entities.customer.fields.city'),
       {},
     ),

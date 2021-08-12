@@ -23,7 +23,7 @@ import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Pagination from 'src/view/shared/table/Pagination';
 import Spinner from 'src/view/shared/Spinner';
 import TableCellCustom from 'src/view/shared/table/TableCellCustom';
-
+import CityListItem from 'src/view/city/list/CityListItem';
 
 function CustomerListTable(props) {
   const [
@@ -157,6 +157,15 @@ function CustomerListTable(props) {
                 onSort={doChangeSort}
                 hasRows={hasRows}
                 sorter={sorter}
+                name={'socialType'}
+                label={i18n(
+                  'entities.customer.fields.socialType',
+                )}
+              />
+              <TableCellCustom
+                onSort={doChangeSort}
+                hasRows={hasRows}
+                sorter={sorter}
                 name={'socialId'}
                 label={i18n(
                   'entities.customer.fields.socialId',
@@ -172,10 +181,6 @@ function CustomerListTable(props) {
                 )}
               />
               <TableCellCustom
-                onSort={doChangeSort}
-                hasRows={hasRows}
-                sorter={sorter}
-                name={'city'}
                 label={i18n(
                   'entities.customer.fields.city',
                 )}
@@ -231,9 +236,12 @@ function CustomerListTable(props) {
                 <TableCell>{row.fullName}</TableCell>
                 <TableCell>{row.phoneNumber}</TableCell>
                 <TableCell>{row.email}</TableCell>
+                <TableCell>{row.socialType}</TableCell>
                 <TableCell>{row.socialId}</TableCell>
                 <TableCell>{row.profileImage}</TableCell>
-                <TableCell>{row.city}</TableCell>
+                <TableCell>
+                  <CityListItem value={row.city} />
+                </TableCell>
                 <TableCell>{row.currentLocation}</TableCell>                  
                   <TableCell>
                     <Box

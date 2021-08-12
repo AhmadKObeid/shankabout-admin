@@ -23,6 +23,7 @@ import filterRenders from 'src/modules/shared/filter/filterRenders';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import FilterAccordion from 'src/view/shared/filter/FilterAccordion';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
 
 const schema = yup.object().shape({
   fullName: yupFilterSchemas.string(
@@ -34,13 +35,16 @@ const schema = yup.object().shape({
   email: yupFilterSchemas.string(
     i18n('entities.customer.fields.email'),
   ),
+  socialType: yupFilterSchemas.string(
+    i18n('entities.customer.fields.socialType'),
+  ),
   socialId: yupFilterSchemas.string(
     i18n('entities.customer.fields.socialId'),
   ),
   profileImage: yupFilterSchemas.string(
     i18n('entities.customer.fields.profileImage'),
   ),
-  city: yupFilterSchemas.string(
+  city: yupFilterSchemas.relationToOne(
     i18n('entities.customer.fields.city'),
   ),
   currentLocation: yupFilterSchemas.string(
@@ -52,6 +56,7 @@ const emptyValues = {
   fullName: null,
   phoneNumber: null,
   email: null,
+  socialType: null,
   socialId: null,
   profileImage: null,
   city: null,
@@ -71,6 +76,10 @@ const previewRenders = {
     label: i18n('entities.customer.fields.email'),
     render: filterRenders.generic(),
   },
+  socialType: {
+    label: i18n('entities.customer.fields.socialType'),
+    render: filterRenders.generic(),
+  },
   socialId: {
     label: i18n('entities.customer.fields.socialId'),
     render: filterRenders.generic(),
@@ -80,9 +89,9 @@ const previewRenders = {
     render: filterRenders.generic(),
   },
   city: {
-    label: i18n('entities.customer.fields.city'),
-    render: filterRenders.generic(),
-  },
+      label: i18n('entities.customer.fields.city'),
+      render: filterRenders.relationToOne(),
+    },
   currentLocation: {
     label: i18n('entities.customer.fields.currentLocation'),
     render: filterRenders.generic(),
@@ -171,6 +180,12 @@ function CustomerListFilter(props) {
                 </Grid>
                 <Grid item lg={6} xs={12}>
                   <InputFormItem
+                    name="socialType"
+                    label={i18n('entities.customer.fields.socialType')}      
+                  />
+                </Grid>
+                <Grid item lg={6} xs={12}>
+                  <InputFormItem
                     name="socialId"
                     label={i18n('entities.customer.fields.socialId')}      
                   />
@@ -182,9 +197,9 @@ function CustomerListFilter(props) {
                   />
                 </Grid>
                 <Grid item lg={6} xs={12}>
-                  <InputFormItem
+                  <CityAutocompleteFormItem  
                     name="city"
-                    label={i18n('entities.customer.fields.city')}      
+                    label={i18n('entities.customer.fields.city')}        
                   />
                 </Grid>
                 <Grid item lg={6} xs={12}>

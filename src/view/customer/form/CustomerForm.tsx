@@ -12,6 +12,7 @@ import * as yup from 'yup';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import { yupResolver } from '@hookform/resolvers/yup';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
 
 const schema = yup.object().shape({
   fullName: yupFormSchemas.string(
@@ -22,12 +23,16 @@ const schema = yup.object().shape({
   ),
   phoneNumber: yupFormSchemas.string(
     i18n('entities.customer.fields.phoneNumber'),
+    {},
+  ),
+  email: yupFormSchemas.string(
+    i18n('entities.customer.fields.email'),
     {
       "required": true
     },
   ),
-  email: yupFormSchemas.string(
-    i18n('entities.customer.fields.email'),
+  socialType: yupFormSchemas.string(
+    i18n('entities.customer.fields.socialType'),
     {
       "required": true
     },
@@ -40,7 +45,7 @@ const schema = yup.object().shape({
     i18n('entities.customer.fields.profileImage'),
     {},
   ),
-  city: yupFormSchemas.string(
+  city: yupFormSchemas.relationToOne(
     i18n('entities.customer.fields.city'),
     {},
   ),
@@ -58,6 +63,7 @@ function CustomerForm(props) {
       fullName: record.fullName,
       phoneNumber: record.phoneNumber,
       email: record.email,
+      socialType: record.socialType,
       socialId: record.socialId,
       profileImage: record.profileImage,
       city: record.city,
@@ -100,13 +106,20 @@ function CustomerForm(props) {
               <InputFormItem
                 name="phoneNumber"
                 label={i18n('entities.customer.fields.phoneNumber')}  
-                required={true}
+                required={false}
               />
             </Grid>
             <Grid item lg={7} md={8} sm={12} xs={12}>
               <InputFormItem
                 name="email"
                 label={i18n('entities.customer.fields.email')}  
+                required={true}
+              />
+            </Grid>
+            <Grid item lg={7} md={8} sm={12} xs={12}>
+              <InputFormItem
+                name="socialType"
+                label={i18n('entities.customer.fields.socialType')}  
                 required={true}
               />
             </Grid>
@@ -125,10 +138,11 @@ function CustomerForm(props) {
               />
             </Grid>
             <Grid item lg={7} md={8} sm={12} xs={12}>
-              <InputFormItem
+              <CityAutocompleteFormItem  
                 name="city"
-                label={i18n('entities.customer.fields.city')}  
+                label={i18n('entities.customer.fields.city')}
                 required={false}
+                showCreate={!props.modal}
               />
             </Grid>
             <Grid item lg={7} md={8} sm={12} xs={12}>

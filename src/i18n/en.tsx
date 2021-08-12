@@ -63,6 +63,7 @@ const en = {
           'fullName': 'FullName',
           'phoneNumber': 'PhoneNumber',
           'email': 'Email',
+          'socialType': 'SocialType',
           'socialId': 'socialId',
           'profileImage': 'ProfileImage',
           'city': 'City',
@@ -194,7 +195,6 @@ const en = {
           'resturentId': 'ResturentId',
           'username': 'Username',
           'password': 'Password',
-          'map': 'Map',
           createdAt: 'Created at',
           updatedAt: 'Updated at',
           createdAtRange: 'Created at',
@@ -934,6 +934,60 @@ const en = {
         importer: {
           title: 'Import CallDrivers',
           fileName: 'callDriver_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
+
+    city: {
+        name: 'city',
+        label: 'Cities',
+        menu: 'Cities',
+        exporterFileName: 'city_export',
+        list: {
+          menu: 'Cities',
+          title: 'Cities',
+        },
+        create: {
+          success: 'City successfully saved',
+        },
+        update: {
+          success: 'City successfully saved',
+        },
+        destroy: {
+          success: 'City successfully deleted',
+        },
+        destroyAll: {
+          success: 'City(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit City',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New City',
+        },
+        view: {
+          title: 'View City',
+        },
+        importer: {
+          title: 'Import Cities',
+          fileName: 'city_import_template',
           hint:
             'Files/Images columns must be the URLs of the files separated by space.',
         },
