@@ -25,6 +25,11 @@ function CustomerView(props) {
         />
 
         <TextViewItem
+          label={i18n('entities.customer.fields.socialType')}
+          value={record.socialType}
+        />
+
+        <TextViewItem
           label={i18n('entities.customer.fields.socialId')}
           value={record.socialId}
         />

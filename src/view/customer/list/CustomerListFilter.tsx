@@ -34,6 +34,9 @@ const schema = yup.object().shape({
   email: yupFilterSchemas.string(
     i18n('entities.customer.fields.email'),
   ),
+  socialType: yupFilterSchemas.string(
+    i18n('entities.customer.fields.socialType'),
+  ),
   socialId: yupFilterSchemas.string(
     i18n('entities.customer.fields.socialId'),
   ),
@@ -52,6 +55,7 @@ const emptyValues = {
   fullName: null,
   phoneNumber: null,
   email: null,
+  socialType: null,
   socialId: null,
   profileImage: null,
   city: null,
@@ -69,6 +73,10 @@ const previewRenders = {
   },
   email: {
     label: i18n('entities.customer.fields.email'),
+    render: filterRenders.generic(),
+  },
+  socialType: {
+    label: i18n('entities.customer.fields.socialType'),
     render: filterRenders.generic(),
   },
   socialId: {
@@ -167,6 +175,12 @@ function CustomerListFilter(props) {
                   <InputFormItem
                     name="email"
                     label={i18n('entities.customer.fields.email')}      
+                  />
+                </Grid>
+                <Grid item lg={6} xs={12}>
+                  <InputFormItem
+                    name="socialType"
+                    label={i18n('entities.customer.fields.socialType')}      
                   />
                 </Grid>
                 <Grid item lg={6} xs={12}>

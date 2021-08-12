@@ -157,6 +157,15 @@ function CustomerListTable(props) {
                 onSort={doChangeSort}
                 hasRows={hasRows}
                 sorter={sorter}
+                name={'socialType'}
+                label={i18n(
+                  'entities.customer.fields.socialType',
+                )}
+              />
+              <TableCellCustom
+                onSort={doChangeSort}
+                hasRows={hasRows}
+                sorter={sorter}
                 name={'socialId'}
                 label={i18n(
                   'entities.customer.fields.socialId',
@@ -231,6 +240,7 @@ function CustomerListTable(props) {
                 <TableCell>{row.fullName}</TableCell>
                 <TableCell>{row.phoneNumber}</TableCell>
                 <TableCell>{row.email}</TableCell>
+                <TableCell>{row.socialType}</TableCell>
                 <TableCell>{row.socialId}</TableCell>
                 <TableCell>{row.profileImage}</TableCell>
                 <TableCell>{row.city}</TableCell>

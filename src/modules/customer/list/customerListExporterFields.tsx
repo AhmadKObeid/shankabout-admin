@@ -19,6 +19,10 @@ export default [
     label: i18n('entities.customer.fields.email'),
   },
   {
+    name: 'socialType',
+    label: i18n('entities.customer.fields.socialType'),
+  },
+  {
     name: 'socialId',
     label: i18n('entities.customer.fields.socialId'),
   },

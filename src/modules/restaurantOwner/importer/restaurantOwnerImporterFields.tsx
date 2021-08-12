@@ -32,12 +32,4 @@ export default [
       },
     ),
   },
-  {
-    name: 'map',
-    label: i18n('entities.restaurantOwner.fields.map'),
-    schema: schemas.string(
-      i18n('entities.restaurantOwner.fields.map'),
-      {},
-    ),
-  },
 ];

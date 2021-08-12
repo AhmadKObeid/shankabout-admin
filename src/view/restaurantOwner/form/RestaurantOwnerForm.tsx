@@ -33,10 +33,6 @@ const schema = yup.object().shape({
       "required": true
     },
   ),
-  map: yupFormSchemas.string(
-    i18n('entities.restaurantOwner.fields.map'),
-    {},
-  ),
 });
 
 function RestaurantOwnerForm(props) {
@@ -47,7 +43,6 @@ function RestaurantOwnerForm(props) {
       resturentId: record.resturentId,
       username: record.username,
       password: record.password,
-      map: record.map,
     };
   });
 
@@ -94,13 +89,6 @@ function RestaurantOwnerForm(props) {
                 name="password"
                 label={i18n('entities.restaurantOwner.fields.password')}  
                 required={true}
-              />
-            </Grid>
-            <Grid item lg={7} md={8} sm={12} xs={12}>
-              <InputFormItem
-                name="map"
-                label={i18n('entities.restaurantOwner.fields.map')}  
-                required={false}
               />
             </Grid>
           </Grid>
