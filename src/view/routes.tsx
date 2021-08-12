@@ -671,6 +671,44 @@ const privateRoutes = [
     permissionRequired: permissions.callDriverRead,
     exact: true,
   },
+
+  {
+    path: '/city',
+    loader: () =>
+      import('src/view/city/list/CityListPage'),
+    permissionRequired: permissions.cityRead,
+    exact: true,
+  },
+  {
+    path: '/city/new',
+    loader: () =>
+      import('src/view/city/form/CityFormPage'),
+    permissionRequired: permissions.cityCreate,
+    exact: true,
+  },
+  {
+    path: '/city/importer',
+    loader: () =>
+      import(
+        'src/view/city/importer/CityImporterPage'
+      ),
+    permissionRequired: permissions.cityImport,
+    exact: true,
+  },
+  {
+    path: '/city/:id/edit',
+    loader: () =>
+      import('src/view/city/form/CityFormPage'),
+    permissionRequired: permissions.cityEdit,
+    exact: true,
+  },
+  {
+    path: '/city/:id',
+    loader: () =>
+      import('src/view/city/view/CityViewPage'),
+    permissionRequired: permissions.cityRead,
+    exact: true,
+  },
 ].filter(Boolean);
 
 const publicRoutes = [

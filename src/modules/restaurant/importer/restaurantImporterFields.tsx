@@ -31,11 +31,9 @@ export default [
   {
     name: 'city',
     label: i18n('entities.restaurant.fields.city'),
-    schema: schemas.string(
+    schema: schemas.relationToOne(
       i18n('entities.restaurant.fields.city'),
-      {
-        "required": true
-      },
+      {},
     ),
   },
   {

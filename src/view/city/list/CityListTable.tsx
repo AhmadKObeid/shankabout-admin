@@ -14,19 +14,18 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import restaurantSelectors from 'src/modules/restaurant/restaurantSelectors';
-import destroyActions from 'src/modules/restaurant/destroy/restaurantDestroyActions';
-import destroySelectors from 'src/modules/restaurant/destroy/restaurantDestroySelectors';
-import actions from 'src/modules/restaurant/list/restaurantListActions';
-import selectors from 'src/modules/restaurant/list/restaurantListSelectors';
+import citySelectors from 'src/modules/city/citySelectors';
+import destroyActions from 'src/modules/city/destroy/cityDestroyActions';
+import destroySelectors from 'src/modules/city/destroy/cityDestroySelectors';
+import actions from 'src/modules/city/list/cityListActions';
+import selectors from 'src/modules/city/list/cityListSelectors';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Pagination from 'src/view/shared/table/Pagination';
 import Spinner from 'src/view/shared/Spinner';
 import TableCellCustom from 'src/view/shared/table/TableCellCustom';
-import ResturentCategoryListItem from 'src/view/resturentCategory/list/ResturentCategoryListItem';
-import CityListItem from 'src/view/city/list/CityListItem';
 
-function RestaurantListTable(props) {
+
+function CityListTable(props) {
   const [
     recordIdToDestroy,
     setRecordIdToDestroy,
@@ -54,10 +53,10 @@ function RestaurantListTable(props) {
     selectors.selectIsAllSelected,
   );
   const hasPermissionToEdit = useSelector(
-    restaurantSelectors.selectPermissionToEdit,
+    citySelectors.selectPermissionToEdit,
   );
   const hasPermissionToDestroy = useSelector(
-    restaurantSelectors.selectPermissionToDestroy,
+    citySelectors.selectPermissionToDestroy,
   );
 
   const doOpenDestroyConfirmModal = (id) => {
@@ -133,80 +132,8 @@ function RestaurantListTable(props) {
                 sorter={sorter}
                 name={'name'}
                 label={i18n(
-                  'entities.restaurant.fields.name',
+                  'entities.city.fields.name',
                 )}
-              />
-              <TableCellCustom
-                label={i18n(
-                  'entities.restaurant.fields.status',
-                )}
-              />
-              <TableCellCustom
-                label={i18n(
-                  'entities.restaurant.fields.category',
-                )}
-              />
-              <TableCellCustom
-                label={i18n(
-                  'entities.restaurant.fields.city',
-                )}
-              />
-              <TableCellCustom
-                onSort={doChangeSort}
-                hasRows={hasRows}
-                sorter={sorter}
-                name={'address'}
-                label={i18n(
-                  'entities.restaurant.fields.address',
-                )}
-              />
-              <TableCellCustom
-                onSort={doChangeSort}
-                hasRows={hasRows}
-                sorter={sorter}
-                name={'description'}
-                label={i18n(
-                  'entities.restaurant.fields.description',
-                )}
-              />
-              <TableCellCustom
-                onSort={doChangeSort}
-                hasRows={hasRows}
-                sorter={sorter}
-                name={'googleMap'}
-                label={i18n(
-                  'entities.restaurant.fields.googleMap',
-                )}
-              />
-              <TableCellCustom
-                onSort={doChangeSort}
-                hasRows={hasRows}
-                sorter={sorter}
-                name={'fees'}
-                label={i18n(
-                  'entities.restaurant.fields.fees',
-                )}
-                align="right"
-              />
-              <TableCellCustom
-                onSort={doChangeSort}
-                hasRows={hasRows}
-                sorter={sorter}
-                name={'maxFeesILS'}
-                label={i18n(
-                  'entities.restaurant.fields.maxFeesILS',
-                )}
-                align="right"
-              />
-              <TableCellCustom
-                onSort={doChangeSort}
-                hasRows={hasRows}
-                sorter={sorter}
-                name={'minFeesILS'}
-                label={i18n(
-                  'entities.restaurant.fields.minFeesILS',
-                )}
-                align="right"
               />              
               <TableCellCustom size="md" />
             </TableRow>
@@ -247,30 +174,7 @@ function RestaurantListTable(props) {
                       size="small"
                     />
                   </TableCell>
-                <TableCell>{row.name}</TableCell>
-                <TableCell>
-                  {(row.status || []).map((value) => (
-                    <div key={value}>
-                      {value
-                        ? i18n(
-                          `entities.restaurant.enumerators.status.${value}`,
-                          )
-                        : null}
-                    </div>
-                  ))}
-                </TableCell>
-                <TableCell>
-                  <ResturentCategoryListItem value={row.category} />
-                </TableCell>
-                <TableCell>
-                  <CityListItem value={row.city} />
-                </TableCell>
-                <TableCell>{row.address}</TableCell>
-                <TableCell>{row.description}</TableCell>
-                <TableCell>{row.googleMap}</TableCell>
-                <TableCell align="right">{row.fees}</TableCell>
-                <TableCell align="right">{row.maxFeesILS}</TableCell>
-                <TableCell align="right">{row.minFeesILS}</TableCell>                  
+                <TableCell>{row.name}</TableCell>                  
                   <TableCell>
                     <Box
                       display="flex"
@@ -280,7 +184,7 @@ function RestaurantListTable(props) {
                         <IconButton
                           component={Link}
                           color="primary"
-                          to={`/restaurant/${row.id}`}
+                          to={`/city/${row.id}`}
                         >
                           <SearchIcon />
                         </IconButton>
@@ -292,7 +196,7 @@ function RestaurantListTable(props) {
                           <IconButton
                             color="primary"
                             component={Link}
-                            to={`/restaurant/${row.id}/edit`}
+                            to={`/city/${row.id}/edit`}
                           >
                             <EditIcon />
                           </IconButton>
@@ -340,4 +244,4 @@ function RestaurantListTable(props) {
   );
 }
 
-export default RestaurantListTable;
+export default CityListTable;

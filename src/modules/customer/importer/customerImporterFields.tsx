@@ -17,9 +17,7 @@ export default [
     label: i18n('entities.customer.fields.phoneNumber'),
     schema: schemas.string(
       i18n('entities.customer.fields.phoneNumber'),
-      {
-        "required": true
-      },
+      {},
     ),
   },
   {
@@ -61,7 +59,7 @@ export default [
   {
     name: 'city',
     label: i18n('entities.customer.fields.city'),
-    schema: schemas.string(
+    schema: schemas.relationToOne(
       i18n('entities.customer.fields.city'),
       {},
     ),

@@ -152,4 +152,11 @@ export default [
     icon: <ChevronRightIcon />,
     label: i18n('entities.callDriver.menu'),
   },
+
+  {
+    path: '/city',
+    permissionRequired: permissions.cityRead,
+    icon: <ChevronRightIcon />,
+    label: i18n('entities.city.menu'),
+  },
 ].filter(Boolean);

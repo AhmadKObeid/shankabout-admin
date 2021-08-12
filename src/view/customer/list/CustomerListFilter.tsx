@@ -23,6 +23,7 @@ import filterRenders from 'src/modules/shared/filter/filterRenders';
 import FilterPreview from 'src/view/shared/filter/FilterPreview';
 import FilterAccordion from 'src/view/shared/filter/FilterAccordion';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
 
 const schema = yup.object().shape({
   fullName: yupFilterSchemas.string(
@@ -43,7 +44,7 @@ const schema = yup.object().shape({
   profileImage: yupFilterSchemas.string(
     i18n('entities.customer.fields.profileImage'),
   ),
-  city: yupFilterSchemas.string(
+  city: yupFilterSchemas.relationToOne(
     i18n('entities.customer.fields.city'),
   ),
   currentLocation: yupFilterSchemas.string(
@@ -88,9 +89,9 @@ const previewRenders = {
     render: filterRenders.generic(),
   },
   city: {
-    label: i18n('entities.customer.fields.city'),
-    render: filterRenders.generic(),
-  },
+      label: i18n('entities.customer.fields.city'),
+      render: filterRenders.relationToOne(),
+    },
   currentLocation: {
     label: i18n('entities.customer.fields.currentLocation'),
     render: filterRenders.generic(),
@@ -196,9 +197,9 @@ function CustomerListFilter(props) {
                   />
                 </Grid>
                 <Grid item lg={6} xs={12}>
-                  <InputFormItem
+                  <CityAutocompleteFormItem  
                     name="city"
-                    label={i18n('entities.customer.fields.city')}      
+                    label={i18n('entities.customer.fields.city')}        
                   />
                 </Grid>
                 <Grid item lg={6} xs={12}>

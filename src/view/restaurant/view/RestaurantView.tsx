@@ -4,6 +4,7 @@ import { i18n } from 'src/i18n';
 import TextViewItem from 'src/view/shared/view/TextViewItem';
 import CustomViewItem from 'src/view/shared/view/CustomViewItem';
 import ResturentCategoryViewItem from 'src/view/resturentCategory/view/ResturentCategoryViewItem';
+import CityViewItem from 'src/view/city/view/CityViewItem';
 
 function RestaurantView(props) {
   const renderView = () => {
@@ -37,7 +38,7 @@ function RestaurantView(props) {
           value={record.category}
         />
 
-        <TextViewItem
+        <CityViewItem
           label={i18n('entities.restaurant.fields.city')}
           value={record.city}
         />

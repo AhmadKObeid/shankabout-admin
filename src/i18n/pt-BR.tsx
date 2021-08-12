@@ -938,6 +938,60 @@ const ptBR = {
             'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
         },
       },
+
+    city: {
+        name: 'City',
+        label: 'Cities',
+        menu: 'Cities',
+        exporterFileName: 'City_exportados',
+        list: {
+          menu: 'Cities',
+          title: 'Cities',
+        },
+        create: {
+          success: 'City salvo com sucesso',
+        },
+        update: {
+          success: 'City salvo com sucesso',
+        },
+        destroy: {
+          success: 'City deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'City(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar City',
+        },
+        fields: {
+          id: 'Id',
+          'name': 'Name',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Novo City',
+        },
+        view: {
+          title: 'Visualizar City',
+        },
+        importer: {
+          title: 'Importar Cities',
+          fileName: 'city_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
   },
     
   auth: {

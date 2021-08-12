@@ -33,6 +33,7 @@ export default [
   {
     name: 'city',
     label: i18n('entities.customer.fields.city'),
+    render: exporterRenders.relationToOne(),
   },
   {
     name: 'currentLocation',
