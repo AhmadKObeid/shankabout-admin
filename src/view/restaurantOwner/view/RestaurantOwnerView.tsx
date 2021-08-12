@@ -23,11 +23,6 @@ function RestaurantOwnerView(props) {
         <TextViewItem
           label={i18n('entities.restaurantOwner.fields.password')}
           value={record.password}
-        />
-
-        <TextViewItem
-          label={i18n('entities.restaurantOwner.fields.map')}
-          value={record.map}
         />        
       </div>
     );

@@ -33,6 +33,16 @@ export default [
     ),
   },
   {
+    name: 'socialType',
+    label: i18n('entities.customer.fields.socialType'),
+    schema: schemas.string(
+      i18n('entities.customer.fields.socialType'),
+      {
+        "required": true
+      },
+    ),
+  },
+  {
     name: 'socialId',
     label: i18n('entities.customer.fields.socialId'),
     schema: schemas.string(

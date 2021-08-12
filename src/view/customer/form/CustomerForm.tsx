@@ -32,6 +32,12 @@ const schema = yup.object().shape({
       "required": true
     },
   ),
+  socialType: yupFormSchemas.string(
+    i18n('entities.customer.fields.socialType'),
+    {
+      "required": true
+    },
+  ),
   socialId: yupFormSchemas.string(
     i18n('entities.customer.fields.socialId'),
     {},
@@ -58,6 +64,7 @@ function CustomerForm(props) {
       fullName: record.fullName,
       phoneNumber: record.phoneNumber,
       email: record.email,
+      socialType: record.socialType,
       socialId: record.socialId,
       profileImage: record.profileImage,
       city: record.city,
@@ -107,6 +114,13 @@ function CustomerForm(props) {
               <InputFormItem
                 name="email"
                 label={i18n('entities.customer.fields.email')}  
+                required={true}
+              />
+            </Grid>
+            <Grid item lg={7} md={8} sm={12} xs={12}>
+              <InputFormItem
+                name="socialType"
+                label={i18n('entities.customer.fields.socialType')}  
                 required={true}
               />
             </Grid>

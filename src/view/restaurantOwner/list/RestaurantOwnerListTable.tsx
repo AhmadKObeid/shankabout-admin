@@ -148,15 +148,6 @@ function RestaurantOwnerListTable(props) {
                 label={i18n(
                   'entities.restaurantOwner.fields.password',
                 )}
-              />
-              <TableCellCustom
-                onSort={doChangeSort}
-                hasRows={hasRows}
-                sorter={sorter}
-                name={'map'}
-                label={i18n(
-                  'entities.restaurantOwner.fields.map',
-                )}
               />              
               <TableCellCustom size="md" />
             </TableRow>
@@ -201,8 +192,7 @@ function RestaurantOwnerListTable(props) {
                   <RestaurantListItem value={row.resturentId} />
                 </TableCell>
                 <TableCell>{row.username}</TableCell>
-                <TableCell>{row.password}</TableCell>
-                <TableCell>{row.map}</TableCell>                  
+                <TableCell>{row.password}</TableCell>                  
                   <TableCell>
                     <Box
                       display="flex"
