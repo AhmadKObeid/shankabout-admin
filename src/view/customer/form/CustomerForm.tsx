@@ -37,12 +37,6 @@ const schema = yup.object().shape({
       "required": true
     },
   ),
-  socialType: yupFormSchemas.string(
-    i18n('entities.customer.fields.socialType'),
-    {
-      "required": true
-    },
-  ),
   socialId: yupFormSchemas.string(
     i18n('entities.customer.fields.socialId'),
     {},
@@ -103,48 +97,48 @@ function CustomerForm(props) {
             <Grid item lg={7} md={8} sm={12} xs={12}>
               <InputFormItem
                 name="fullName"
-                label={i18n('entities.customer.fields.fullName')}  
+                label={i18n('entities.customer.fields.fullName')}
                 required={true}
-              autoFocus
+                autoFocus
               />
             </Grid>
             <Grid item lg={7} md={8} sm={12} xs={12}>
               <InputFormItem
                 name="phoneNumber"
-                label={i18n('entities.customer.fields.phoneNumber')}  
+                label={i18n('entities.customer.fields.phoneNumber')}
                 required={false}
               />
             </Grid>
             <Grid item lg={7} md={8} sm={12} xs={12}>
               <InputFormItem
                 name="email"
-                label={i18n('entities.customer.fields.email')}  
+                label={i18n('entities.customer.fields.email')}
                 required={true}
               />
             </Grid>
             <Grid item lg={7} md={8} sm={12} xs={12}>
               <InputFormItem
                 name="socialType"
-                label={i18n('entities.customer.fields.socialType')}  
+                label={i18n('entities.customer.fields.socialType')}
                 required={true}
               />
             </Grid>
             <Grid item lg={7} md={8} sm={12} xs={12}>
               <InputFormItem
                 name="socialId"
-                label={i18n('entities.customer.fields.socialId')}  
+                label={i18n('entities.customer.fields.socialId')}
                 required={false}
               />
             </Grid>
             <Grid item lg={7} md={8} sm={12} xs={12}>
               <InputFormItem
                 name="profileImage"
-                label={i18n('entities.customer.fields.profileImage')}  
+                label={i18n('entities.customer.fields.profileImage')}
                 required={false}
               />
             </Grid>
             <Grid item lg={7} md={8} sm={12} xs={12}>
-              <CityAutocompleteFormItem  
+              <CityAutocompleteFormItem
                 name="city"
                 label={i18n('entities.customer.fields.city')}
                 required={false}
@@ -154,7 +148,7 @@ function CustomerForm(props) {
             <Grid item lg={7} md={8} sm={12} xs={12}>
               <InputFormItem
                 name="currentLocation"
-                label={i18n('entities.customer.fields.currentLocation')}  
+                label={i18n('entities.customer.fields.currentLocation')}
                 required={false}
               />
             </Grid>
