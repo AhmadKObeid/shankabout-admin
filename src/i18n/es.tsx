@@ -990,6 +990,62 @@ const es = {
             'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
         },
       },
+
+    customerAdress: {
+        name: 'customerAdress',
+        label: 'CustomerAdresses',
+        menu: 'CustomerAdresses',
+        exporterFileName: 'exportacion_customerAdress',
+        list: {
+          menu: 'CustomerAdresses',
+          title: 'CustomerAdresses',
+        },
+        create: {
+          success: 'CustomerAdress guardado con éxito',
+        },
+        update: {
+          success: 'CustomerAdress guardado con éxito',
+        },
+        destroy: {
+          success: 'CustomerAdress eliminado con éxito',
+        },
+        destroyAll: {
+          success: 'CustomerAdress(s) eliminado con éxito',
+        },
+        edit: {
+          title: 'Editar CustomerAdress',
+        },
+        fields: {
+          id: 'Id',
+          'customer': 'Customer',
+          'name': 'Name',
+          'locationObject': 'LocationObject',
+          createdAt: 'Creado el',
+          updatedAt: 'Actualizado el',
+          createdAtRange: 'Creado el',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Nuevo CustomerAdress',
+        },
+        view: {
+          title: 'Ver CustomerAdress',
+        },
+        importer: {
+          title: 'Importar CustomerAdresses',
+          fileName: 'customerAdress_import_template',
+          hint:
+            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        },
+      },
   },
   auth: {
     tenants: 'Espacios de trabajo',

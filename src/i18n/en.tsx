@@ -992,6 +992,62 @@ const en = {
             'Files/Images columns must be the URLs of the files separated by space.',
         },
       },
+
+    customerAdress: {
+        name: 'customerAdress',
+        label: 'CustomerAdresses',
+        menu: 'CustomerAdresses',
+        exporterFileName: 'customerAdress_export',
+        list: {
+          menu: 'CustomerAdresses',
+          title: 'CustomerAdresses',
+        },
+        create: {
+          success: 'CustomerAdress successfully saved',
+        },
+        update: {
+          success: 'CustomerAdress successfully saved',
+        },
+        destroy: {
+          success: 'CustomerAdress successfully deleted',
+        },
+        destroyAll: {
+          success: 'CustomerAdress(s) successfully deleted',
+        },
+        edit: {
+          title: 'Edit CustomerAdress',
+        },
+        fields: {
+          id: 'Id',
+          'customer': 'Customer',
+          'name': 'Name',
+          'locationObject': 'LocationObject',
+          createdAt: 'Created at',
+          updatedAt: 'Updated at',
+          createdAtRange: 'Created at',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'New CustomerAdress',
+        },
+        view: {
+          title: 'View CustomerAdress',
+        },
+        importer: {
+          title: 'Import CustomerAdresses',
+          fileName: 'customerAdress_import_template',
+          hint:
+            'Files/Images columns must be the URLs of the files separated by space.',
+        },
+      },
   },
 
   auth: {

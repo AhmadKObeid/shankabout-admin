@@ -22,6 +22,7 @@ import offerPromotion from 'src/modules/offerPromotion/offerPromotionReducers';
 import resturantPromiton from 'src/modules/resturantPromiton/resturantPromitonReducers';
 import callDriver from 'src/modules/callDriver/callDriverReducers';
 import city from 'src/modules/city/cityReducers';
+import customerAdress from 'src/modules/customerAdress/customerAdressReducers';
 import { combineReducers } from 'redux';
 
 export default (history) =>
@@ -50,4 +51,5 @@ export default (history) =>
     resturantPromiton,
     callDriver,
     city,
+    customerAdress,
   });

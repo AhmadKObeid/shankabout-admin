@@ -709,6 +709,44 @@ const privateRoutes = [
     permissionRequired: permissions.cityRead,
     exact: true,
   },
+
+  {
+    path: '/customer-adress',
+    loader: () =>
+      import('src/view/customerAdress/list/CustomerAdressListPage'),
+    permissionRequired: permissions.customerAdressRead,
+    exact: true,
+  },
+  {
+    path: '/customer-adress/new',
+    loader: () =>
+      import('src/view/customerAdress/form/CustomerAdressFormPage'),
+    permissionRequired: permissions.customerAdressCreate,
+    exact: true,
+  },
+  {
+    path: '/customer-adress/importer',
+    loader: () =>
+      import(
+        'src/view/customerAdress/importer/CustomerAdressImporterPage'
+      ),
+    permissionRequired: permissions.customerAdressImport,
+    exact: true,
+  },
+  {
+    path: '/customer-adress/:id/edit',
+    loader: () =>
+      import('src/view/customerAdress/form/CustomerAdressFormPage'),
+    permissionRequired: permissions.customerAdressEdit,
+    exact: true,
+  },
+  {
+    path: '/customer-adress/:id',
+    loader: () =>
+      import('src/view/customerAdress/view/CustomerAdressViewPage'),
+    permissionRequired: permissions.customerAdressRead,
+    exact: true,
+  },
 ].filter(Boolean);
 
 const publicRoutes = [

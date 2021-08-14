@@ -760,6 +760,46 @@ class Permissions {
         allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
+
+      customerAdressImport: {
+        id: 'customerAdressImport',
+        allowedRoles: [roles.admin],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+      },
+      customerAdressCreate: {
+        id: 'customerAdressCreate',
+        allowedRoles: [roles.admin],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedStorage: [
+
+        ],
+      },
+      customerAdressEdit: {
+        id: 'customerAdressEdit',
+        allowedRoles: [roles.admin],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedStorage: [
+
+        ],
+      },
+      customerAdressDestroy: {
+        id: 'customerAdressDestroy',
+        allowedRoles: [roles.admin],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+        allowedStorage: [
+
+        ],
+      },
+      customerAdressRead: {
+        id: 'customerAdressRead',
+        allowedRoles: [roles.admin, roles.custom],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+      },
+      customerAdressAutocomplete: {
+        id: 'customerAdressAutocomplete',
+        allowedRoles: [roles.admin, roles.custom],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+      },
     };
   }
 

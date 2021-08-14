@@ -992,6 +992,62 @@ const ptBR = {
             'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
         },
       },
+
+    customerAdress: {
+        name: 'CustomerAdress',
+        label: 'CustomerAdresses',
+        menu: 'CustomerAdresses',
+        exporterFileName: 'CustomerAdress_exportados',
+        list: {
+          menu: 'CustomerAdresses',
+          title: 'CustomerAdresses',
+        },
+        create: {
+          success: 'CustomerAdress salvo com sucesso',
+        },
+        update: {
+          success: 'CustomerAdress salvo com sucesso',
+        },
+        destroy: {
+          success: 'CustomerAdress deletado com sucesso',
+        },
+        destroyAll: {
+          success: 'CustomerAdress(s) deletado com sucesso',
+        },
+        edit: {
+          title: 'Editar CustomerAdress',
+        },
+        fields: {
+          id: 'Id',
+          'customer': 'Customer',
+          'name': 'Name',
+          'locationObject': 'LocationObject',
+          createdAt: 'Criado em',
+          updatedAt: 'Atualizado em',
+          createdAtRange: 'Criado em',
+        },
+        enumerators: {
+
+        },
+        placeholders: {
+
+        },
+        hints: {
+
+        },
+        new: {
+          title: 'Novo CustomerAdress',
+        },
+        view: {
+          title: 'Visualizar CustomerAdress',
+        },
+        importer: {
+          title: 'Importar CustomerAdresses',
+          fileName: 'customerAdress_template_importacao',
+          hint:
+            'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        },
+      },
   },
     
   auth: {

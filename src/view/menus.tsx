@@ -159,4 +159,11 @@ export default [
     icon: <ChevronRightIcon />,
     label: i18n('entities.city.menu'),
   },
+
+  {
+    path: '/customer-adress',
+    permissionRequired: permissions.customerAdressRead,
+    icon: <ChevronRightIcon />,
+    label: i18n('entities.customerAdress.menu'),
+  },
 ].filter(Boolean);

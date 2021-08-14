@@ -12,62 +12,37 @@ import * as yup from 'yup';
 import yupFormSchemas from 'src/modules/shared/yup/yupFormSchemas';
 import { yupResolver } from '@hookform/resolvers/yup';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
-import CityAutocompleteFormItem from 'src/view/city/autocomplete/CityAutocompleteFormItem';
+import CustomerAutocompleteFormItem from 'src/view/customer/autocomplete/CustomerAutocompleteFormItem';
 
 const schema = yup.object().shape({
-  fullName: yupFormSchemas.string(
-    i18n('entities.customer.fields.fullName'),
+  customer: yupFormSchemas.relationToOne(
+    i18n('entities.customerAdress.fields.customer'),
     {
       "required": true
     },
   ),
-  phoneNumber: yupFormSchemas.string(
-    i18n('entities.customer.fields.phoneNumber'),
-    {},
-  ),
-  email: yupFormSchemas.string(
-    i18n('entities.customer.fields.email'),
+  name: yupFormSchemas.string(
+    i18n('entities.customerAdress.fields.name'),
     {
       "required": true
     },
   ),
-  socialType: yupFormSchemas.string(
-    i18n('entities.customer.fields.socialType'),
+  locationObject: yupFormSchemas.string(
+    i18n('entities.customerAdress.fields.locationObject'),
     {
       "required": true
     },
-  ),
-  socialId: yupFormSchemas.string(
-    i18n('entities.customer.fields.socialId'),
-    {},
-  ),
-  profileImage: yupFormSchemas.string(
-    i18n('entities.customer.fields.profileImage'),
-    {},
-  ),
-  city: yupFormSchemas.relationToOne(
-    i18n('entities.customer.fields.city'),
-    {},
-  ),
-  currentLocation: yupFormSchemas.string(
-    i18n('entities.customer.fields.currentLocation'),
-    {},
   ),
 });
 
-function CustomerForm(props) {
+function CustomerAdressForm(props) {
   const [initialValues] = useState(() => {
     const record = props.record || {};
 
     return {
-      fullName: record.fullName,
-      phoneNumber: record.phoneNumber,
-      email: record.email,
-      socialType: record.socialType,
-      socialId: record.socialId,
-      profileImage: record.profileImage,
-      city: record.city,
-      currentLocation: record.currentLocation,
+      customer: record.customer,
+      name: record.name,
+      locationObject: record.locationObject,
     };
   });
 
@@ -95,61 +70,25 @@ function CustomerForm(props) {
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <Grid spacing={2} container>
             <Grid item lg={7} md={8} sm={12} xs={12}>
-              <InputFormItem
-                name="fullName"
-                label={i18n('entities.customer.fields.fullName')}  
+              <CustomerAutocompleteFormItem  
+                name="customer"
+                label={i18n('entities.customerAdress.fields.customer')}
                 required={true}
-              autoFocus
-              />
-            </Grid>
-            <Grid item lg={7} md={8} sm={12} xs={12}>
-              <InputFormItem
-                name="phoneNumber"
-                label={i18n('entities.customer.fields.phoneNumber')}  
-                required={false}
-              />
-            </Grid>
-            <Grid item lg={7} md={8} sm={12} xs={12}>
-              <InputFormItem
-                name="email"
-                label={i18n('entities.customer.fields.email')}  
-                required={true}
-              />
-            </Grid>
-            <Grid item lg={7} md={8} sm={12} xs={12}>
-              <InputFormItem
-                name="socialType"
-                label={i18n('entities.customer.fields.socialType')}  
-                required={true}
-              />
-            </Grid>
-            <Grid item lg={7} md={8} sm={12} xs={12}>
-              <InputFormItem
-                name="socialId"
-                label={i18n('entities.customer.fields.socialId')}  
-                required={false}
-              />
-            </Grid>
-            <Grid item lg={7} md={8} sm={12} xs={12}>
-              <InputFormItem
-                name="profileImage"
-                label={i18n('entities.customer.fields.profileImage')}  
-                required={false}
-              />
-            </Grid>
-            <Grid item lg={7} md={8} sm={12} xs={12}>
-              <CityAutocompleteFormItem  
-                name="city"
-                label={i18n('entities.customer.fields.city')}
-                required={false}
                 showCreate={!props.modal}
               />
             </Grid>
             <Grid item lg={7} md={8} sm={12} xs={12}>
               <InputFormItem
-                name="currentLocation"
-                label={i18n('entities.customer.fields.currentLocation')}  
-                required={false}
+                name="name"
+                label={i18n('entities.customerAdress.fields.name')}  
+                required={true}
+              />
+            </Grid>
+            <Grid item lg={7} md={8} sm={12} xs={12}>
+              <InputFormItem
+                name="locationObject"
+                label={i18n('entities.customerAdress.fields.locationObject')}  
+                required={true}
               />
             </Grid>
           </Grid>
@@ -200,4 +139,4 @@ function CustomerForm(props) {
   );
 }
 
-export default CustomerForm;
+export default CustomerAdressForm;
